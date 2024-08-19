@@ -12,7 +12,7 @@ class prompt) in a given scene. This enables the ‘user-friendly’ part of the
 second task is to edit the pose of the object by taking user poses (e.g. Azimuth +10 degrees, Polar -5
 degrees). The final generated scene should look realistic and composite.
 
-Tasks and Respective Status:
+## Tasks and Respective Status:
 1. Task1 (SUCCESS). This task is to write an executable code that takes the input scene and the text prompt
 from the command line argument and outputs an image with a red mask on all pixels where
 the object (denoted in the text prompt) was present.
