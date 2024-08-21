@@ -110,4 +110,6 @@ The provided code implements a multi-step process to segment an object from an i
 ---
 
 ### **Key Takeway**
-The initial assumption was that yolov8x model will be capable of detecting 
+The initial assumption was that yolov8x model will be capable of detecting every object in the scene, but the class names came out to be different than the class prompt, hence I performed a similarity check to match it with the nearest class detected.
+
+For eg: when sofa image was fed, it gave me label "couch". Which is similar to sofa in the semantic sense of natural language, hence it processed the object sofa effectively.
