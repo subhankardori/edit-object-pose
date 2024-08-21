@@ -28,6 +28,22 @@ The generated image:
 a. Should preserve the scene (background) (FAIL)
 b. Should adhere to the relative angles given by the use (SUCCESS)
 
+### **Setting Up the Python Environment**
+
+To set up a Python virtual environment and install the required dependencies, follow these steps:
+
+```bash
+# Create a Python virtual environment named 'object-pose-env'
+python3 -m venv object-pose-env
+
+# Activate the virtual environment
+source object-pose-env/bin/activate
+
+# Install the required Python packages from the requirements.txt file
+pip install -r requirements.txt
+```
+
+These commands will create and activate a virtual environment called `object-pose-env` and install all the necessary Python packages as specified in your `requirements.txt` file. This environment helps in managing dependencies and ensuring that your project runs consistently across different setups.
 ### **Prerequisites**
 
 To set up the environment and download the necessary pre-trained models for the script, follow these steps:
