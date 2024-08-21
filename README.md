@@ -170,6 +170,14 @@ The provided code implements a multi-step process to segment an object from an i
 The initial assumption was that yolov8x model will be capable of detecting every object in the scene, but the class names came out to be different than the class prompt, hence I performed a similarity check to match it with the nearest class detected.
 
 For eg: when sofa image was fed, it gave me label "couch". Which is similar to sofa in the semantic sense of natural language, hence it processed the object sofa effectively.
+### Technical Approach and Details of `run2.py`
+
+**Key Addon done in run_v2.py:**
+1. **Object Detection with YOLOWorld:**
+   - **Model Initialization:** The script uses YOLOWorld, a model designed to handle dynamic class definitions, which allows for the detection of objects based on custom prompts.
+   - **Detection Process:** The model is configured to detect objects within an image using the specified class name provided by the user. The detected bounding boxes for the relevant objects are collected.
+   - **Advantage:** YOLOWorld's dynamic class capability enables the detection of a wide variety of objects without needing to retrain the model, making it flexible and adaptable.
+
 ### Failed Cases
 ```
 Failed Case: Laptop
@@ -199,3 +207,5 @@ No object detected for class name: laptop
 The script failed to detect the object when using the "laptop" class with the specified image. This issue might be related to the detection model's limitations with certain classes or specific images. The failure to detect the object means the subsequent steps in the pipeline could not be executed.
 
 **Possible SOlutions**: need to have a better view of the object while capturing, try lowering the YOLO detection confidence 
+
+**All the Results can be found in the results folder.**
