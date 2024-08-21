@@ -28,6 +28,28 @@ The generated image:
 a. Should preserve the scene (background) (FAIL)
 b. Should adhere to the relative angles given by the use (SUCCESS)
 
+### **Prerequisites**
+
+To set up the environment and download the necessary pre-trained models for the script, follow these steps:
+
+```bash
+# Create the models directory
+mkdir models/
+
+# Navigate to the models directory
+cd models/
+
+# Download the SAM (Segment Anything Model) large model
+wget -O sam_l.pt https://github.com/ultralytics/assets/releases/download/v8.2.0/sam_l.pt
+
+# Download the YOLOv8x model
+wget -O yolov8x.pt https://github.com/ultralytics/assets/releases/download/v0.0.0/yolov8x.pt
+
+# Download the YOLOv8x World model
+wget https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8x-worldv2.pt
+```
+
+These commands will create a `models/` directory and download the necessary models for YOLO and SAM, which are required to run the script.
 ### Detailed Description of the Approach 1 (run.py)
 
 The provided code implements a multi-step process to segment an object from an image, rotate it, and blend it back into the original scene using inpainting techniques. This approach leverages several advanced deep learning models, including YOLO for object detection, SAM for segmentation, and Zero123/Stable Diffusion pipelines for novel view synthesis and inpainting. Below is a detailed breakdown of each step in the approach:
