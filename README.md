@@ -38,7 +38,7 @@ python3 -m venv object-pose-env
 
 # Activate the virtual environment
 source object-pose-env/bin/activate
-
+cd edit-object-pose/
 # Install the required Python packages from the requirements.txt file
 pip install -r requirements.txt
 ```
