@@ -170,3 +170,39 @@ The provided code implements a multi-step process to segment an object from an i
 The initial assumption was that yolov8x model will be capable of detecting every object in the scene, but the class names came out to be different than the class prompt, hence I performed a similarity check to match it with the nearest class detected.
 
 For eg: when sofa image was fed, it gave me label "couch". Which is similar to sofa in the semantic sense of natural language, hence it processed the object sofa effectively.
+### Failed Cases
+Certainly! Below is an enhanced version of the markdown snippet with potential solutions and steps for further investigation.
+
+```markdown
+## Known Issues
+
+### Failed Case: Laptop
+
+**Command:**
+
+```bash
+python run2.py --image pose_editing_examples/laptop.jpg --class_name "laptop" --output_dir output/ --azimuth +60 --polar -20
+```
+
+**Log Output:**
+
+```
+(zero123-env) dori@nemo:~/subhankar/zero123-hf$ python run2.py --image pose_editing_examples/laptop.jpg --class_name "laptop" --output_dir output/ --azimuth +60 --polar -20
+/home/dori/subhankar/zero123-hf/zero123-env/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:211: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+  @torch.library.impl_abstract("xformers_flash::flash_fwd")
+/home/dori/subhankar/zero123-hf/zero123-env/lib/python3.10/site-packages/xformers/ops/fmha/flash.py:344: FutureWarning: `torch.library.impl_abstract` was renamed to `torch.library.register_fake`. Please use that instead; we will remove `torch.library.impl_abstract` in a future version of PyTorch.
+  @torch.library.impl_abstract("xformers_flash::flash_bwd")
+==========================================================================================================
+Task2: Novel Synthesis of Projection View at a given pose followed by inpainting with the original scene background.
+==========================================================================================================
+
+image 1/1 /home/dori/subhankar/zero123-hf/pose_editing_examples/laptop.jpg: 640x640 1 laptop, 33.0ms
+Speed: 4.9ms preprocess, 33.0ms inference, 10.4ms postprocess per image at shape (1, 3, 640, 640)
+No object detected for class name: laptop
+```
+
+**Description:**
+
+The script failed to detect the object when using the "laptop" class with the specified image. This issue might be related to the detection model's limitations with certain classes or specific images. The failure to detect the object means the subsequent steps in the pipeline could not be executed.
+
+**Possible SOlutions**: need to have a better view of the object while capturing, try lowering the YOLO detection confidence 
