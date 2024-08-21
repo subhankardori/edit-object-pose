@@ -12,21 +12,36 @@ class prompt) in a given scene. This enables the ‘user-friendly’ part of the
 second task is to edit the pose of the object by taking user poses (e.g. Azimuth +10 degrees, Polar -5
 degrees). The final generated scene should look realistic and composite.
 
-## Tasks and Respective Status:
-1. Task1 (SUCCESS). This task is to write an executable code that takes the input scene and the text prompt
-from the command line argument and outputs an image with a red mask on all pixels where
-the object (denoted in the text prompt) was present.
-(e.g. python run.py --image ./example.jpg --class "chair" --output
-./generated.png)
+### **Tasks and Respective Status**
 
-2. Task2. The second task is to change the pose of the segmented object by the relative angles
-given by the user. You can use a consistent direction as positive azimuth and polar angle
-change and mention what you used.
-(e.g. python run.py --image ./example.jpg --class "chair" --azimuth
-+72 --polar +0 --output ./generated.png)
-The generated image:
-a. Should preserve the scene (background) (FAIL)
-b. Should adhere to the relative angles given by the use (SUCCESS)
+#### **Task 1: Red Mask Generation (SUCCESS)**
+- **Description:** 
+  - This task involves writing executable code that takes an input image and a text prompt (representing an object class) from the command line. The code outputs an image with a red mask on all pixels where the object specified in the text prompt is present.
+- **Execution Example:**
+  - Command: `python run.py --image ./example.jpg --class "chair" --output ./generated.png`
+  - **Status:** SUCCESS
+  - The output image correctly identifies the object (e.g., a chair) and applies a red mask over it.
+
+#### **Task 2: Pose Change of the Segmented Object**
+- **Description:** 
+  - This task requires altering the pose of the segmented object based on relative angles (azimuth and polar) provided by the user. The positive direction for azimuth and polar angles should be consistent and explicitly mentioned.
+- **Execution Example:**
+  - Command: `python run.py --image ./example.jpg --class "chair" --azimuth +72 --polar +0 --output ./generated.png`
+  
+- **Subtasks and Status:**
+  - **a. Scene Preservation (Background) (FAIL):**
+    - The generated image should preserve the original scene, meaning the background should remain intact after altering the object's pose.
+    - **Status:** FAIL
+    - **Issue:** The background scene was not preserved accurately during the pose change, leading to inconsistencies or artifacts in the final image.
+  
+  - **b. Adherence to Relative Angles (SUCCESS):**
+    - The object's pose should be changed according to the specified relative angles (azimuth and polar) provided by the user.
+    - **Status:** SUCCESS
+    - The object was correctly rotated according to the specified angles.
+
+### **Summary:**
+- **Task 1** was successfully completed, with the code accurately generating a red mask over the specified object.
+- **Task 2** had mixed results. While the object was correctly rotated according to the relative angles, the background scene was not preserved as required, leading to a failure in maintaining scene integrity during the pose transformation.
 
 ### **Setting Up the Python Environment**
 
