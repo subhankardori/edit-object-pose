@@ -1,4 +1,5 @@
 # edit-object-pose
+##Note: It is highly advisable to execute `run_v2.py` for evaluating the assignment. I have purposely undertaken two approaches just for portraying my experimentation.
 
 ## Problem Statement: Edit pose of an object in a scene
 Recent advancement in generative AI has led to a development of a lot of creative workflows. One
