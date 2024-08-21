@@ -171,8 +171,6 @@ The initial assumption was that yolov8x model will be capable of detecting every
 
 For eg: when sofa image was fed, it gave me label "couch". Which is similar to sofa in the semantic sense of natural language, hence it processed the object sofa effectively.
 ### Failed Cases
-Certainly! Below is an enhanced version of the markdown snippet with potential solutions and steps for further investigation.
-
 ```markdown
 ## Known Issues
 
