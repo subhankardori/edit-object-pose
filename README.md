@@ -109,4 +109,5 @@ The provided code implements a multi-step process to segment an object from an i
 
 ---
 
-### **Key Takeway*
+### **Key Takeway**
+The initial assumption was that yolov8x model will be capable of detecting 
