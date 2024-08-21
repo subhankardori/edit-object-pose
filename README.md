@@ -82,7 +82,11 @@ wget https://github.com/ultralytics/assets/releases/download/v8.2.0/yolov8x-worl
 
 These commands will create a `models/` directory and download the necessary models for YOLO and SAM, which are required to run the script.
 ### Detailed Description of the Approach 1 (run.py)
-
+#### CLI for Script Execution
+```bash
+python run.py --image pose_editing_examples/chair2.jpeg --class_name "chair" --output_dir output/ # Task 1
+python run.py --image pose_editing_examples/chair2.jpeg --class_name "chair" --output_dir output/ --azimuth +72 --polar +0 #Task 2
+```
 The provided code implements a multi-step process to segment an object from an image, rotate it, and blend it back into the original scene using inpainting techniques. This approach leverages several advanced deep learning models, including YOLO for object detection, SAM for segmentation, and Zero123/Stable Diffusion pipelines for novel view synthesis and inpainting. Below is a detailed breakdown of each step in the approach:
 
 ---
