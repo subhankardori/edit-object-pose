@@ -178,14 +178,14 @@ For eg: when sofa image was fed, it gave me label "couch". Which is similar to s
    - **Advantage:** YOLOWorld's dynamic class capability enables the detection of a wide variety of objects without needing to retrain the model, making it flexible and adaptable.
 
 ```
-python run_v2.py --image pose_editing_examples/lamp.jpg --class_name "study lamp on table" --output_dir output/ --azimuth +60 --polar +5
+python run_v2.py --image pose_editing_examples/lamp.jpg --class_name "study lamp on table" --output_dir output/ --azimuth +72 --polar +0
 ```
-Note : Azimuth of +60 and polar of +5 has been used throughout
+Note : Azimuth of +72 and polar of +0 has been used throughout
 ### Failed Cases
 ```
 Failed Case: Laptop
 Command:
-python run2.py --image pose_editing_examples/laptop.jpg --class_name "laptop" --output_dir output/ --azimuth +60 --polar -20
+python run2.py --image pose_editing_examples/laptop.jpg --class_name "laptop" --output_dir output/ --azimuth +72 --polar +0
 ```
 
 **Log Output:**
