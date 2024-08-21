@@ -177,6 +177,10 @@ For eg: when sofa image was fed, it gave me label "couch". Which is similar to s
    - **Detection Process:** The model is configured to detect objects within an image using the specified class name provided by the user. The detected bounding boxes for the relevant objects are collected.
    - **Advantage:** YOLOWorld's dynamic class capability enables the detection of a wide variety of objects without needing to retrain the model, making it flexible and adaptable.
 
+```
+python run_v2.py --image pose_editing_examples/lamp.jpg --class_name "study lamp on table" --output_dir output/ --azimuth +60 --polar +5
+```
+Note : Azimuth of +60 and polar of +5 has been used throughout
 ### Failed Cases
 ```
 Failed Case: Laptop
